@@ -5,8 +5,8 @@ variable "ec2_instance_type" {
 
   validation {
     # condition = var.ec2_instance_type == "t2.micro" || var.ec2_instance_type == "t3.micro" 
-    # condition = contains(["t2.micro", "t3.micro"], var.ec2_instance_type)
-    condition = startswith(var.ec2_instance_type, "t3")
+    condition = contains(["t2.micro", "t3.micro"], var.ec2_instance_type)
+    # condition = startswith(var.ec2_instance_type, "t3")
     error_message = "Only supported instnces t2.micro or t3.micro"
   }
 }
